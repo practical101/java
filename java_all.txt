@@ -1,0 +1,493 @@
+exp 1.
+
+import java.io.*;
+import java.util.Scanner;
+
+class takestudentdetail{
+    public static void main(String []args){
+        Scanner sc=new Scanner(System.in);
+        int rn,fee;
+        String n;
+        System.out.println("Enter your name");
+        n=sc.next();
+        System.out.println("Enter your fees");
+        fee=sc.nextInt();
+        System.out.println("Enter your rollno");
+        rn=sc.nextInt();
+
+        System.out.println("fees"+fee+"\nroll no is"+rn+("\nfees "+fee));
+
+    }
+}
+
+exp 2.
+
+import java.util.Scanner;
+import java.io.*;
+class circle{
+    double p;
+    double a;
+void area(double r){
+    a=3.14*r*r;
+    System.out.println("area of circle:"+a);
+}
+void peri(double r){
+    p=3.14*2*r;
+    System.out.println("perimeter of circle is:"+p);
+}
+}
+public class crtfstclasscircle_E2 {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        circle m=new circle();
+        System.out.println("ENTER RADIUS OF CIRCLE:");
+        double r=sc.nextDouble();
+        m.peri(r);
+        m.area(r);
+    }
+}
+
+exp 3.
+
+//EXP 3
+
+import java.util.Scanner;
+import java.io.*;
+class box{
+    int height;
+    int length;
+    int depth;
+box(){
+    height=length=depth=10;
+}
+box(int x,int y){
+    height=x;
+    length=y;
+}
+box(int x,int y,int z){
+    height=x;
+    length=y;
+    depth=z;
+    }
+}
+public class constructoroverloading_E3 {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+         box m=new box();
+        System.out.println("height of m:"+m.height);
+        box n=new box(20,56);
+        System.out.println("height of box n:"+n.height);
+        box o=new box(44,66,23);
+        System.out.println("height of box o is:"+o.height);
+    }
+}
+
+exp 4.
+
+//EXP 4
+
+import java.util.*;
+import java.io.*;
+class area{
+double carea;
+int rarea;
+void area(double r){
+    carea=3.14*r*r;
+    System.out.println("AREA OF CIRCLE IS:"+carea);
+}
+void area(int l,int b){
+    rarea=l*b;
+    System.out.println("AREA OF RECTANGLE IS:"+rarea);
+}
+}
+public class methodoverload_E4 {
+    public static void main(String[] args) {
+    Scanner sc=new Scanner(System.in);
+    area m=new area();
+        System.out.println("ENTER RADIUS OF CIRCLE:");
+        Double r=sc.nextDouble();
+        m.area(r);
+        System.out.println("ENTER LENGTH AND BREADTH OF RECTANGLE:");
+        int l=sc.nextInt();
+        int b =sc.nextInt();
+        m.area(l,b);
+
+    }
+}
+
+exp 5.
+
+//EXP 5
+
+import java.util.Scanner;
+public class oneD_array_E5 {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int a[]=new int[10];
+        int temp;
+        System.out.println("Enter value in array:");
+        for (int i=0;i<a.length;i++){
+            a[i]=sc.nextInt();
+        }
+        for (int i=0;i<a.length;i++)
+        {
+            for (int j=i+1;j<a.length;j++)
+            {
+             if (a[i]>a[j])
+             {
+             temp=a[i];
+             a[i]=a[j];
+             a[j]=temp;
+             }
+            }
+        }
+        System.out.println("ASSENDING ORDER IS");
+        for (int i=0;i<a.length;i++)
+        {
+            System.out.println(a[i]+" ");
+        }
+    }
+}
+
+exp 6.
+
+//EXP 6
+
+import java.util.Scanner;
+public class oneD_array_E6 {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int a[]=new int[10];int temp;
+        System.out.println("Enter values of array:");
+        for (int i=0;i<a.length;i++)
+        {
+            a[i]=sc.nextInt();
+        }
+       for (int i=0;i<10;i++)
+       {
+           for (int j=i+1;j<a.length;j++){
+               if (a[i]<a[j])
+               {
+               temp=a[i];
+               a[i]=a[j];
+               a[j]=temp;
+               }
+           }
+        }
+        System.out.println("Descending order of array is:");
+        for (int i=0;i<a.length;i++)
+        {
+            System.out.println(a[i]+" ");
+        }
+    }
+}
+
+
+exp 7.
+
+//EXP 7
+
+import java.util.Scanner;
+import java.io.*;
+public class multi2matrix_E7 {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int a[][]=new int[2][2];
+        int b[][]=new int[2][2];
+        int c[][]=new int[2][2];
+        int i,j,k;
+        System.out.println("Enter Element IN Matrix 1:");
+        for (i=0;i<2;i++)
+        {
+            for (j=0;j<2;j++)
+            {
+             a[i][j]=sc.nextInt();
+            }
+        }
+        System.out.println("Enter Element IN Matrix 2:");
+        for (i=0;i<2;i++)
+        {
+            for (j=0;j<2;j++)
+            {
+                b[i][j]=sc.nextInt();
+            }
+        }
+        for(i=0;i<2;i++)
+        {
+            for (j=0;j<2;j++)
+             {
+                 c[i][j]=0;
+                for (k=0;k<2;k++)
+                {
+            c[i][j]=c[i][j] + a[i][k] * b[k][j];
+                }
+             }
+        }
+        System.out.println("Multiplication result is..");
+        for (i=0;i<2;i++)
+        {
+            for (j=0;j<2;j++)
+            {
+                System.out.print(c[i][j]+"\t");
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+exp 8.
+
+//EXP 8
+
+import java.util.*;
+public class String_E8 {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int i,count=0,consonants;
+        System.out.println("Enter String:");
+        String ap=sc.nextLine();
+        int length=ap.length();
+    for (i=0;i<length;i++)
+    {
+        if (ap.charAt(i)=='a'||ap.charAt(i)=='e'||ap.charAt(i)=='i'||ap.charAt(i)=='o'||ap.charAt(i)=='u'
+       ||ap.charAt(i)=='A'||ap.charAt(i)=='E'||ap.charAt(i)=='I'||ap.charAt(i)=='O'||ap.charAt(i)=='U')
+        {
+            count++;
+        }
+    }
+        System.out.println("NUMBER OF VOWWELS ARE IN STRING:"+count);
+    consonants=length-count;
+        System.out.println("CONSONANTS IN STRING ARE:"+consonants);
+    }
+}
+
+
+exp 9.
+
+//EXP 9
+
+import java.util.*;
+public class String_E9 {
+    public static void main(String[] args) {
+        String original,reverse="";
+        Scanner sc=new Scanner(System.in);
+        System.out.println("ENTER ANY STRING TO CHECK IT IS PALINDROME:");
+        original=sc.nextLine();
+        int length=original.length();
+
+        for (int i=length-1;i>=0;i--)
+         reverse= reverse + original.charAt(i);
+
+        if (original.equals(reverse))
+            System.out.println("STRINIG IS PALINDROME");
+        else
+            System.out.println("STRING IS NOT PALINDROME");
+    }
+}
+
+
+exp 10.
+
+//EXP 10
+
+import java.util.*;
+import java.io.*;
+public class Stringbuffer_E10 {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        StringBuffer ap=new StringBuffer("India");
+        System.out.println("\n1.Length\n2.capacity\n3.setlength\n4.charat" +
+                "\n5.setcharat\n6.append\n7.deletecharat\n8.insert\n9.reverse");
+        System.out.println("Enter Your Choice:");
+        int ch=sc.nextInt();
+        switch (ch)
+        {
+            case 1:
+                System.out.println("length of string is"+ap.length());
+                break;
+            case 2:
+                System.out.println("capacity of string is"+ap.capacity());
+                break;
+            case 3:
+                ap.setLength(6);
+            System.out.println("set length of string is"+ap.length());
+            break;
+            case 4:
+                System.out.println("char at"+ap.charAt(4));
+                break;
+            case 5:
+                ap.setCharAt(1,'i');
+                System.out.println("setchar at"+ap);
+                break;
+            case 6:
+                System.out.println("append:"+ap.append(" Greastest Of All Time"));
+                break;
+            case 7:
+                System.out.println("dlt char at"+ap.deleteCharAt(3));
+                break;
+            case 8:
+                System.out.println("INserting char at"+ap.insert(3,'D'));
+                break;
+            case 9:
+                System.out.println("reversing char"+ap.reverse());
+                break;
+        }
+    }
+}
+
+
+exp 11.
+
+
+//EXP 11
+
+class rectangle{
+    int l,b;
+    void setval(int x,int y)
+    {
+        l=x;
+        b=y;
+    }
+    int getrect()
+    {
+        return l*b;
+    }
+}
+class triangle extends rectangle
+{
+    int b,h;
+    float a;
+    void setdata(int v,int u)
+    {
+        b=v;
+        h=u;
+    }
+    float gettri()
+    {
+        a=(float)l/2*h*b;
+        return a;
+    }
+}
+public class classupclass_E11 {
+    public static void main(String[] args) {
+        triangle tri=new triangle();
+        tri.setval(50,57);
+        tri.setdata(35,45);
+        System.out.println("area of rectangle is:"+tri.getrect());
+        System.out.println("area of triangle is:"+tri.gettri());
+    }
+}
+
+exp 12.
+
+//EXP 12
+
+import java.util.Scanner;
+
+class wrkdetails {
+    int c,s;
+    String n;
+    float h;
+    void setsal(int x,String y,int z)
+    {
+        c=x;
+        n=y;
+        s=z;
+    }
+    void showdetail()
+    {
+        System.out.println("code"+c);
+        System.out.println("name"+n);
+        System.out.println("salary"+s);
+    }
+    void gethra()
+    {
+        h=(float)s*60/100;
+        System.out.println("HRA"+h);
+    }
+}
+class officersal extends wrkdetails
+        {
+            float d;
+            void getda()
+            {
+                d=(float)s*98/100;
+                System.out.println("DA:"+d);
+            }
+        }
+class managersal extends officersal
+{
+    float ca,g;
+    void getca()
+    {
+        ca=(float)s*20/100;
+        System.out.println("city allocance"+ca);
+    }
+    void getgross()
+    {
+        g=s+d+ca+h;
+        System.out.println("GROSS"+g);
+    }
+}
+public class multilevel_E12 {
+    public static void main(String[] args) {
+    Scanner sc=new Scanner(System.in);
+    managersal m=new managersal();
+    m.setsal(5,"ATHARV PATIL",99999);
+        System.out.println("Worker Details are:");
+        m.showdetail();
+        m.gethra();
+        m.getda();
+        m.getca();
+        m.getgross();
+    }
+}
+
+exp 13.
+
+//EXP 13
+
+class ClassA
+{
+    public void dispA()
+    {
+        System.out.println("disp() method of class A");
+    }
+}
+class ClassB extends ClassA
+{
+    public void dispB()
+    {
+        System.out.println("disp() method of class B");
+    }
+}
+class ClassC extends ClassA
+{
+    public void dispC()
+    {
+        System.out.println("disp() method of class C");
+    }
+}
+class ClassD extends ClassA
+{
+    public void dispD()
+    {
+        System.out.println("disp() method of class D");
+    }
+}
+public class heirachical_inheri_E13 {
+    public static void main(String[] args) {
+  ClassB b=new ClassB();
+  b.dispB();
+  b.dispA();
+  ClassC c=new ClassC();
+  c.dispC();
+  c.dispA();
+  ClassD d=new ClassD();
+  d.dispD();
+  d.dispA();
+    }
+}
+
+

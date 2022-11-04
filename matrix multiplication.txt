@@ -1,0 +1,52 @@
+import java.io.*;
+import java.util.*;
+class Matmul
+{
+    public static void main(String Args[])
+    {
+        int m,i,j,k;
+        Scanner in=new Scanner(System.in);
+        System.out.println("Enter no of row/Column of Square Matrix.");
+        m=in.nextInt();
+        int first[][]=new int[m][m];
+        int second[][]=new int[m][m];
+        int third[][]=new int[m][m];
+        System.out.println("Enter "+(m*m)+" Elements of first matrix");
+        for(i=0;i<m;i++)
+        {
+            for(j=0;j<m;j++)
+            {
+                first[i][j]=in.nextInt();
+            }
+        }
+        System.out.println("Enter "+(m*m)+" Elements of second matrix");
+        for(i=0;i<m;i++)
+        {
+            for(j=0;j<m;j++)
+            {
+                second[i][j]=in.nextInt();
+            }
+        }
+        System.out.println("The matrix Multiplication is");
+        for(i=0;i<m;i++)
+
+        {
+            for(j=0;j<m;j++)
+            {
+                third[i][j]=0;
+                for(k=0;k<m;k++)
+                {
+                    third[i][j]=third[i][j]+first[i][k]*second[k][j];
+                }
+            }
+        }
+        for(i=0;i<m;i++)
+        {
+            for(j=0;j<m;j++)
+            {
+                System.out.println(third[i][j]+"");
+            }
+            System.out.println("");
+        }
+    }
+}

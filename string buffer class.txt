@@ -1,0 +1,52 @@
+import java.io.*;
+import java.util.*;
+
+class buffer
+{
+    public static void main(String args[])
+    {
+
+        Scanner in=new Scanner(System.in);
+        int ch;
+        StringBuffer str=new StringBuffer("Hello World");
+        System.out.println("\n1.length\n2.capacity\n3.setlength\n4.CharAt\n5.setcharat\n6.Append\n7.deletecharat\n8.substring\n9.insert\n10.reverse");
+        do
+        {
+            System.out.println("enter your choice");
+            ch=in.nextInt();
+            switch(ch)
+            {
+                case 1:
+                    System.out.println("length is="+str.length());
+                    break;
+                case 2:
+                    System.out.println("capacity is="+str.capacity());
+                    break;
+                case 3:
+                    System.out.println("set length is="+str.length());
+                    break;
+                case 4:
+                    System.out.println("char at 2nd position="+str.charAt(2));
+                    break;
+                case 5:
+                    System.out.println("String after setting position="+str);
+                    break;
+                case 6:
+                    System.out.println("String append "+str.append("welcome"));
+                    break;
+                case 7:
+                    System.out.println("substring is="+str.substring(2));
+                    break;
+                case 8:
+                    System.out.println("inserting ="+str.insert(1,"Hey"));
+                    break;
+                case 9:
+                    System.out.println("reverse string is="+str.reverse());
+                    break;
+                default:
+                    System.out.println("you have entered wrong choice");
+                    break;
+            }
+        }while(ch!=12);
+    }
+}

@@ -1,0 +1,18 @@
+import java.applet.*;
+import java.awt.*;
+//<applet code="Smile" height="500" width="250"></applet>
+public class Smile extends Applet
+{
+public void paint (Graphics g)
+{
+g.setColor(Color.pink);
+g.fillOval(20,20,80,80);
+g.setColor(Color.black);
+g.fillOval(38,40,15,10);
+g.fillOval(70,40,15,10);
+g.setColor(Color.red);
+g.fillOval(55,55,10,20);
+g.setColor(Color.red);
+g.fillOval(50,82,20,8);
+}
+}

@@ -1,0 +1,36 @@
+import java.io.*;
+import java.util.*;
+
+class Meth
+{
+    int rarea;
+    double carea;
+    void area(int l,int b)
+    {
+        rarea=l*b;
+        System.out.println("Area of ractangle is"+rarea);
+    }
+    void area(int r)
+    {
+        carea=3.142*r*r;
+        System.out.println("Area of the cirlce is"+carea);
+    }
+}
+class Methdover
+{
+    public static void main(String args[])
+    {
+        int l,b;
+        int r;
+        Meth m=new Meth();
+        Scanner s=new Scanner(System.in);
+        System.out.println("enter values of l and b");
+        l=s.nextInt();
+        b=s.nextInt();
+        System.out.println("enter value of r");
+        r=s.nextInt();
+
+        m.area(r);
+        m.area(l,b);
+    }
+}
